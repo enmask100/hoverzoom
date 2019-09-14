@@ -1079,12 +1079,15 @@ var hoverZoom = {
                 return;
             }
             // Action key (zoom image) is pressed down
-            if (event.which == options.actionKey && !actionKeyDown) {
+            if (event.which == options.actionKey && !actionKeyDown) { 
                 actionKeyDown = true;
                 $(this).mousemove();
                 if (loading || imgFullSize) {
                     return false;
+                } else if {actionKeyDown = false;
+                hideHoverZoomImg();
                 }
+              
             }
             // Full zoom key is pressed down
             if (event.which == options.fullZoomKey && !fullZoomKeyDown) {
@@ -1152,8 +1155,6 @@ var hoverZoom = {
         function documentOnKeyUp(event) {
             // Action key (zoom image) is released
             if (event.which == options.actionKey) {
-                actionKeyDown = false;
-                hideHoverZoomImg();
             }
             // Full zoom key is released
             if (event.which == options.fullZoomKey) {
