@@ -338,7 +338,6 @@ var hoverZoom = {
         }
 
         function hideHoverZoomImg(now) {
-            actionKeyDown = false
             cLog('hideHoverZoomImg(' + now + ')');
             if ((!now && !imgFullSize) || !hz.hzImg || fullZoomKeyDown) {
                 return;
@@ -356,6 +355,7 @@ var hoverZoom = {
                 restoreTitles();
             });
             //chrome.runtime.sendMessage({action: 'viewWindow', visible: false});
+            actionKeyDown = false
         }
 
         function normalizeSrc(hoverZoomSrcIndex, links, dataKey) {
