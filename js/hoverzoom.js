@@ -338,6 +338,7 @@ var hoverZoom = {
         }
 
         function hideHoverZoomImg(now) {
+            actionKeyDown = false
             cLog('hideHoverZoomImg(' + now + ')');
             if ((!now && !imgFullSize) || !hz.hzImg || fullZoomKeyDown) {
                 return;
@@ -1084,10 +1085,10 @@ var hoverZoom = {
                 $(this).mousemove();
                 if (loading || imgFullSize) {
                     return false; 
-                } else if (event.which == options.actionKey && actionKeyDown) {
+                } 
+                }else if (event.which == options.actionKey && actionKeyDown) {
                     actionKeyDown = false;
                     hideHoverZoomImg(); 
-                }
               
             }
             // Full zoom key is pressed down
