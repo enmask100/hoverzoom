@@ -1083,9 +1083,10 @@ var hoverZoom = {
                 actionKeyDown = true;
                 $(this).mousemove();
                 if (loading || imgFullSize) {
-                    return false;
-                } else if {actionKeyDown = false;
-                hideHoverZoomImg();
+                    return false; 
+                } else if (event.which == options.actionKey && actionKeyDown) {
+                    actionKeyDown = false;
+                    hideHoverZoomImg(); 
                 }
               
             }
